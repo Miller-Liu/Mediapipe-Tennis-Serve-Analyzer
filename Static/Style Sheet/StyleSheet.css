@@ -1,0 +1,441 @@
+
+/* .<text> means that <text> is a class
+   #<text> means that <text> is an id
+    <text> means that <text> is an html tag (ex: p) */
+
+#SkipIconContainer{
+    z-index: 1;
+    position: fixed;
+    width: 45px;
+    height: 45px;
+    right: 30px;
+    top: 30px;
+}
+
+#SkipIcon {
+    position: absolute;
+    top: 0px;
+    width: 45px;
+    height: 45px;
+    transition: 0.1s ease-in-out;
+}
+
+#SkipIconContainer:hover #SkipIcon{
+    top: -5px;
+}
+
+#WelcomePage {
+    z-index: 0;
+    font-family: cursive;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #161616;
+    transition: 1s ease-in;
+}
+
+#WelcomeContainer{
+    display: flex;
+    width: 50px;
+    height: 15px;
+    margin: 15px;
+    align-items: center;
+    flex-direction: column;
+    border: groove white;
+    border-radius: 30px;
+    transition: 0.5s linear;
+}
+
+#WelcomeContainer.animation1{
+    width: 600px;
+}
+
+#WelcomeContainer.animation2{
+    height: 125px;
+}
+
+#WelcomeContainer.animation3{
+    display: none;
+    transition: 0s;
+}
+
+#WelcomeText {
+    position: relative;
+    font-size: 25pt;
+    left: -50px;
+    opacity: 0;
+    white-space: nowrap;
+}
+
+#WelcomeText.active {
+    left: 0px;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+#WelcomeText.fade {
+    left: -50px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+#Author {
+    position: relative;
+    font-size: 15pt;
+    white-space: nowrap;
+    top: -30px;
+    right: -50px;
+    opacity: 0;
+}
+
+#Author.active {
+    right: 0px;
+    opacity: 1;
+    transition: ease-in-out 0.5s;
+}
+
+#Author.fade {
+    right: -50px;
+    opacity: 0;
+    transition: ease-in-out 0.5s;
+}
+
+#DescriptionContainer {
+    display: none;
+    width: 600px;
+    height: 125px;
+    margin: 15px;
+    align-items: center;
+    flex-direction: column;
+    border: groove white;
+    border-radius: 30px;
+}
+
+#DescriptionContainer.animation1 {
+    display: flex;
+    transition: 0s;
+}
+
+#DescriptionContainer.animation2 {
+    width: 800px;
+    height: 400px;
+    transition: ease-in-out 0.5s;
+}
+
+#DescriptionContainer.animation3 {
+    opacity: 0;
+    width: 50px;
+    height: 15px;
+    transition: linear 0.5s;
+}
+
+#DescriptionTitle {
+    position: relative;
+    font-size: 25pt;
+    top: 15px;
+    opacity: 0;
+    white-space: nowrap;
+    transition: ease-in-out 0.5s;
+}
+
+#DescriptionTitle.active {
+    opacity: 1;
+}
+
+#DescriptionTitle.fade {
+    opacity: 0;
+    transition: ease-in-out 1s;
+}
+
+#Description {
+    position: relative;
+    font-size: 15pt;
+    margin-left: 40px;
+    margin-right: 40px;
+    opacity: 0;
+    white-space: pre-wrap;
+    transition: ease-in-out 0.5s;
+}
+
+#Description.active {
+    opacity: 1;
+}
+
+#Description.fade {
+    opacity: 0;
+    transition: ease-in-out 1s;
+}
+
+#MainPage {
+    z-index: 0;
+    font-family: cursive;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    top: 100vh;
+    left: 0;
+    background: #DDDDDD;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 1s ease-in;
+    flex-direction: column;
+}
+
+#MainDiv {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #CCCCCC;
+    z-index: -2;
+    padding: 0px;
+    margin: 0px;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(10, 10vw);
+    grid-template-rows: repeat(20, 5vh);
+    justify-items: center;
+}
+
+#MainTitle {
+    grid-row: 1;
+    grid-column: 4/8;
+    height: max-content;
+    width: 350px;
+    display: flex;
+    position: relative;
+    top: 3vh;
+    justify-content: center;
+    border: solid;
+    border-radius: 15px;
+    background-color: #DDDDDD;
+}
+
+#UploadTitle {
+    font-size: 30px;
+}
+
+#InputDiv {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: calc(100vw - 40px);
+    height: calc(100vh - 60px);
+    grid-column: 1/11;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-top: 40px;
+    align-items: center;
+    border: dashed;
+    z-index: -1;
+    background-color: #DDDDDD;
+}
+
+#InputGroup1 {
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: calc(50vw - 20px);
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: solid 1px;
+}
+
+#InputGroup1Background {
+    position: relative;
+    background: #CCCCCC;
+    border: solid #CCCCCC;
+    border-radius: 15px;
+    top: 0px;
+    left: 0;
+    width: calc(50vw - 60px);
+    height: calc(100vh - 100px);
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: ease-in-out 0.1s;
+}
+
+#InputButton1 {
+    margin-top: 15px;
+    background-color: rgb(0,0,0,0);
+    font-family: cursive;
+    border-style: solid;
+    border-radius: 20px;
+    width: max-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 25px;
+    font-style: inherit;
+    transition: ease-in-out 0.1s;
+    cursor: pointer;
+}
+
+#InputButton1:hover {
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+#InputGroup2 {
+    position: relative;
+    top: 0;
+    right: 0;
+    width: calc(50vw - 20px);
+    height: calc(100vh - 60px);
+    border-left: solid 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#InputGroup2Background {
+    position: relative;
+    background: #CCCCCC;
+    border: solid #CCCCCC;
+    border-radius: 15px;
+    top: 0;
+    right: 0;
+    width: calc(50vw - 60px);
+    height: calc(100vh - 100px);
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: ease-in-out 0.1s;
+}
+
+#InputButton2 {
+    margin-top: 15px;
+    background-color: rgb(0,0,0,0);
+    font-family: cursive;
+    border-style: solid;
+    border-radius: 20px;
+    width: max-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 25px;
+    font-style: inherit;
+    transition: ease-in-out 0.1s;
+    cursor: pointer;
+}
+
+#InputButton2:hover {
+    padding-left: 45px;
+    padding-right: 45px;
+}
+
+.video-icon {
+    position: relative;
+    width: 125px;
+}
+
+#UploadButton {
+    grid-row: 17;
+    grid-column: 4/8;
+    height: max-content;
+    width: max-content;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: none;
+    border: solid;
+    border-radius: 15px;
+    background-color: #DDDDDD;
+    transition: ease-in-out 0.25s;
+    position: relative;
+    top: 0px;
+}
+
+#UploadButton:hover {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    top: -20px;
+    cursor: pointer;
+}
+
+#UploadButtonText {
+    font-size: 30px;
+}
+
+#LoadingPage {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #CCCCCC;
+    z-index: -2;
+    top: 100vh;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    opacity: 0;
+}
+
+.Loader {
+    position: relative;
+    border: 5px solid #CCCCCC;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    top: 10vh;
+}
+
+@keyframes loading {
+    0% { background: #CCCCCC; }
+    20% { background: #696969; }
+    40% { background: #CCCCCC; }
+}
+
+#LoaderText {
+    position: absolute;
+    top: 30%;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 50px;
+}
+
+#ProcessedPage {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #CCCCCC;
+    z-index: 0;
+    top: 100vh;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.FinalVideos {
+    position: relative;
+    top: 33px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+}
+
+#PlayVideos {
+    position: relative;
+    top: 0;
+}
