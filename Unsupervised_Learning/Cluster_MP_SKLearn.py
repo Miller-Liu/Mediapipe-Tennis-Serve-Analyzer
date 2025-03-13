@@ -7,6 +7,8 @@ from sklearn.cluster import KMeans
 from numpy import linalg as LA
 from moviepy.editor import *
 import moviepy.video.fx.all as vfx
+import os
+import time
 
 # initialization for mediapipe
 mp_pose = mp.solutions.pose
@@ -14,7 +16,7 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 DESIRED_HEIGHT = 400
 DESIRED_WIDTH = 500
-root_dir = "ENTER YOUR PATH HERE"
+root_dir = os.path.join(os.path.expanduser('~'), 'Projects', 'Trial')
 
 
 # Configure K-means model
@@ -89,6 +91,11 @@ def Process_Video(file_name):
 
     # Create MP Model
     with mp_pose.Pose(min_tracking_confidence=0.5, min_detection_confidence=0.5) as pose:
+        while True:
+            if os.path.isdir(os.path.join(root_dir, "Unsupervised_Learning", "Video_Frames")): 
+                break
+            os.mkdir(os.path.join(root_dir, "Unsupervised_Learning", "Video_Frames"))
+            time.sleep(1)
         while video_cap.isOpened():
             flag, frame = video_cap.read()
             counter += 1
@@ -339,6 +346,7 @@ def Play_Video(vid1, vid2, frame_array):
 def remove_all_files():
     for files in os.listdir(os.path.join(root_dir, "Unsupervised_Learning", "Video_Frames")):
         os.remove(os.path.join(root_dir, "Unsupervised_Learning", "Video_Frames", files))
+    os.rmdir(os.path.join(root_dir, "Unsupervised_Learning", "Video_Frames"))
 
 
 def execute_all(path1, path2):
