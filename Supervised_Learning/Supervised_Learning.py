@@ -16,7 +16,7 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 DESIRED_HEIGHT = 400
 DESIRED_WIDTH = 500
-root_dir = os.path.join(os.path.expanduser('~'), 'PycharmProjects', 'Tennis_AI', 'Tennis_AI_Complete')
+root_dir = "ENTER YOUR PATH HERE"
 current_dir = os.path.join(root_dir, 'Supervised_Learning')
 
 
